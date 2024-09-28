@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("solveRoom2").addEventListener("click", () => {
-        const jsConcepts = new Set(['closure', 'scope', 'hoisting', 'promises']);
+        const jsConcepts = new Set(['closure', 'scope', 'hoisting', 'promises','async']);
         // 🪲 Bug: What's mssing from JS concepts?
         //added promises to js Concepts
+        //actually fixed the bug by adding async so that there is an overlap
         const reactConcepts = new Set(['components', 'jsx', 'hooks', 'async']);
         // 🪲 Bug: Incorrect function call
         //changed the duplicate jsConcepts to reactConcepts
