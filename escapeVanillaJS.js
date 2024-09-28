@@ -13,11 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.getElementById("solveRoom2").addEventListener("click", () => {
-        const jsConcepts = new Set(['closure', 'scope', 'hoisting']);
+        const jsConcepts = new Set(['closure', 'scope', 'hoisting', 'promises']);
         // 🪲 Bug: What's mssing from JS concepts?
+        //added promises to js Concepts
         const reactConcepts = new Set(['components', 'jsx', 'hooks', 'async']);
         // 🪲 Bug: Incorrect function call
-        const commonConcepts = findIntersection(jsConcepts, jsConcepts);
+        //changed the duplicate jsConcepts to reactConcepts
+        const commonConcepts = findIntersection(jsConcepts, reactConcepts);
         document.getElementById("room2Result").textContent = `The code to unlock the door is: ${Array.from(commonConcepts).join(', ')}`;
     });
 
