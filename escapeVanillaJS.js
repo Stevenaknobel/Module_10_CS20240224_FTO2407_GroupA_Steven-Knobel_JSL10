@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then( async directions => {
                 const message = await navigateLabyrinth(directions);
                         // 🪲 Bug: Incorrect method
+                        //changed the stuff above so this is working now, i think? 0.0
                         document.getElementById("room3Result").innerHTML = message;
                     });
             });
@@ -38,12 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function findMostRecentBook(books) {
     // 🪲 Bug: Logic error
-    return books.reduce((mostRecent, book) => new Date(book.published) < new Date(mostRecent.published) ? book : mostRecent);
+    //swapped < for >
+    return books.reduce((mostRecent, book) => new Date(book.published) > new Date(mostRecent.published) ? book : mostRecent);
 }
 
 function findIntersection(setA, setB) {
     // 🪲 Bug: Incorrect logic
-    const intersection = new Set([...setA]);
+    //completed the function to include setB
+    const intersection = new Set([...setA].filter(item => setB.has(item)));
     return intersection;
 }
 
